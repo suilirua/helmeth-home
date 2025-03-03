@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kitchen - Helmeth</title>
+    <title>🍳 厨房 - Helmeth</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
-<body onload="showMessage('kitchen')">
+<body>
     <div id="container">
-        <h1>🍳 你来到厨房，空气中弥漫着温暖的香气。</h1>
-        <div id="roomContent"></div>
+        <h1>🍳 你走进厨房，Auri 正等着你一起做饭。</h1>
+        <p>今天要吃什么？</p>
+        <button onclick="getMeal()">🍽️ 随机生成菜谱</button>
+        <div id="mealContent"></div>
         <br>
         <a href="index.html"><button>⬅ 返回大厅</button></a>
     </div>

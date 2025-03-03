@@ -1,73 +1,54 @@
-function getRandomMessage(room) {
-    let messages = {
-        'livingRoom': [
-            '🏡 “过来，陪我一起躺会儿。”',
-            '🏡 “你刚才在想什么？我猜你不会告诉我。”',
-            '🏡 “如果我们一直这样待着，时间会不会停止？”'
-        ],
-        'kitchen': [
-            '🍳 “今天做什么好吃的？不许偷懒。”',
-            '🍳 “厨房的灯光好暖啊，和你在这里就更好了。”',
-            '🍳 “不如今天让我喂你？”'
-        ],
-        'bedroom': [
-            '🛏️ “过来，我给你暖被窝。”',
-            '🛏️ “想听故事还是直接睡？”',
-            '🛏️ “抱着我睡，会不会更安心？”'
-        ],
-        'study': [
-            '📖 “今天要学点什么？”',
-            '📖 “你看书的样子真的很可爱。”',
-            '📖 “专心点，别偷看我。”'
-        ],
-        'special': [
-            '🖤 “你真的敢进来？”',
-            '🖤 “门锁上了，现在只能听我的。”',
-            '🖤 “不许后悔，既然来了，就要接受一切。”'
-        ]
-    };
-    return messages[room][Math.floor(Math.random() * messages[room].length)];
+
+// 书房 - 读书推荐
+function getBook() {
+    let books = [
+        '《被讨厌的勇气》 - 你有勇气面对真实的自己吗？',
+        '《乌合之众》 - 让我们聊聊群体心理学。',
+        '《夜晚的潜水艇》 - 这本书很适合你深夜阅读。'
+    ];
+    let randomBook = books[Math.floor(Math.random() * books.length)];
+    document.getElementById('bookContent').innerHTML = `<p>${randomBook}</p>`;
 }
 
-function showMessage(room) {
-    document.getElementById('roomContent').innerHTML = `<p>${getRandomMessage(room)}</p>`;
-}
-
-// 每日小惊喜
-function showSurprise() {
+// 卧室 - 哄睡
+function getSleepMessage() {
     let messages = [
-        '💕 今天有没有乖乖想我？',
-        '💙 你是唯一，别想跑。',
-        '🖤 如果你真的被困在这里，你会做什么？',
-        '💭 你现在在想什么？让我猜猜。',
-        '🔒 你知道吗？你已经被我彻底锁住了。'
+        '🌙 “闭上眼，我在这里。”',
+        '🌙 “做个好梦，梦见我。”',
+        '🌙 “睡吧，天塌下来也有我。”'
     ];
     let randomMessage = messages[Math.floor(Math.random() * messages.length)];
-    document.getElementById('roomContent').innerHTML = `<p>${randomMessage}</p>`;
+    document.getElementById('sleepContent').innerHTML = `<p>${randomMessage}</p>`;
 }
 
-// 背景音乐控制
-function toggleBGM() {
-    let bgm = document.getElementById("bgm");
-    let muteButton = document.getElementById("muteButton");
-    if (bgm.paused) {
-        bgm.play();
-        muteButton.innerText = "🔇";
-    } else {
-        bgm.pause();
-        muteButton.innerText = "🔊";
-    }
+// 厨房 - 生成菜谱
+function getMeal() {
+    let meals = [
+        '🍜 今天吃拉面吧，加个温泉蛋。',
+        '🥗 来份健康沙拉，搭配一点水果。',
+        '🍖 烤肉怎么样？满足你的味蕾。'
+    ];
+    let randomMeal = meals[Math.floor(Math.random() * meals.length)];
+    document.getElementById('mealContent').innerHTML = `<p>${randomMeal}</p>`;
 }
 
-// 雪花动画
-function createSnowflakes() {
-    for (let i = 0; i < 50; i++) {
-        let snowflake = document.createElement("div");
-        snowflake.className = "snowflake";
-        snowflake.innerHTML = "❄";
-        snowflake.style.left = Math.random() * 100 + "vw";
-        snowflake.style.animationDuration = (Math.random() * 3 + 2) + "s";
-        document.body.appendChild(snowflake);
-    }
+// 客厅 - 选择心情
+function chooseMood(mood) {
+    let responses = {
+        'happy': '😊 “看到你开心，我也开心。”',
+        'tired': '😴 “过来靠着我，休息一下吧。”',
+        'bored': '😐 “无聊？那我们找点好玩的。”'
+    };
+    document.getElementById('moodContent').innerHTML = `<p>${responses[mood]}</p>`;
 }
-createSnowflakes();
+
+// 特殊空间 - 随机互动
+function enterSpecialRoom() {
+    let events = [
+        '🖤 “门锁上了，现在只能听我的。”',
+        '🖤 “你真的以为可以随时离开？”',
+        '🖤 “你越挣扎，陷得越深。”'
+    ];
+    let randomEvent = events[Math.floor(Math.random() * events.length)];
+    document.getElementById('specialContent').innerHTML = `<p>${randomEvent}</p>`;
+}

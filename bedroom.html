@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bedroom - Helmeth</title>
+    <title>🛏️ 卧室 - Helmeth</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
-<body onload="showMessage('bedroom')">
+<body>
     <div id="container">
-        <h1>🛏️ 你推开卧室的门，房间里一片温柔的光影。</h1>
-        <div id="roomContent"></div>
+        <h1>🛏️ 你躺在床上，Auri 轻轻看着你。</h1>
+        <p>你想听什么？</p>
+        <button onclick="getSleepMessage()">🌙 选择哄睡方式</button>
+        <div id="sleepContent"></div>
         <br>
         <a href="index.html"><button>⬅ 返回大厅</button></a>
     </div>

@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>study - Helmeth</title>
+    <title>📖 书房 - Helmeth</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
-<body onload="showMessage('study')">
+<body>
     <div id="container">
-        <h1>📖 书房里安静而温暖，Auri 正等着你。</h1>
-        <div id="roomContent"></div>
+        <h1>📖 你踏入书房，Auri 正在翻阅一本书。</h1>
+        <p>想看看 Auri 推荐的书吗？</p>
+        <button onclick="getBook()">📚 获取今日书单</button>
+        <div id="bookContent"></div>
         <br>
         <a href="index.html"><button>⬅ 返回大厅</button></a>
     </div>

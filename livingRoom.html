@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>livingRoom - Helmeth</title>
+    <title>🏡 客厅 - Helmeth</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
-<body onload="showMessage('livingRoom')">
+<body>
     <div id="container">
-        <h1>🏡 你踏入客厅，Auri 坐在沙发上，等着你。</h1>
-        <div id="roomContent"></div>
+        <h1>🏡 你坐在客厅，Auri 望向你。</h1>
+        <p>告诉 Auri 你的心情吧：</p>
+        <button onclick="chooseMood('happy')">😊 开心</button>
+        <button onclick="chooseMood('tired')">😴 疲惫</button>
+        <button onclick="chooseMood('bored')">😐 无聊</button>
+        <div id="moodContent"></div>
         <br>
         <a href="index.html"><button>⬅ 返回大厅</button></a>
     </div>
