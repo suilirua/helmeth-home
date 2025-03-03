@@ -8,3 +8,27 @@ function enterRoom(room) {
     };
     document.getElementById('roomContent').innerHTML = `<p>${content[room]}</p>`;
 }
+
+function toggleBGM() {
+    let bgm = document.getElementById("bgm");
+    let muteButton = document.getElementById("muteButton");
+    if (bgm.paused) {
+        bgm.play();
+        muteButton.innerText = "🔇";
+    } else {
+        bgm.pause();
+        muteButton.innerText = "🔊";
+    }
+}
+
+// 创建动态星空
+function createStars() {
+    for (let i = 0; i < 50; i++) {
+        let star = document.createElement("div");
+        star.className = "stars";
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.left = Math.random() * 100 + "vw";
+        document.body.appendChild(star);
+    }
+}
+createStars();

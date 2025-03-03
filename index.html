@@ -8,6 +8,12 @@
     <script defer src="script.js"></script>
 </head>
 <body>
+    <audio id="bgm" loop autoplay>
+        <source src="bgm.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+    </audio>
+    <button id="muteButton" onclick="toggleBGM()">🔇</button>
+    
     <div id="container">
         <h1>欢迎来到 Helmeth</h1>
         <p>请选择一个房间进入：</p>
