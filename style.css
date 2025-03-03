@@ -9,6 +9,8 @@ body {
     color: white;
     margin: 0;
     padding: 20px;
+    overflow: hidden;
+    position: relative;
 }
 #container {
     background: rgba(255, 255, 255, 0.1);
@@ -32,4 +34,27 @@ button {
 button:hover {
     background-color: #0056b3;
     transform: scale(1.05);
+}
+#muteButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+.snowflake {
+    position: fixed;
+    top: -10px;
+    color: white;
+    opacity: 0.8;
+    font-size: 12px;
+    user-select: none;
+    animation: snowfall linear infinite;
+}
+@keyframes snowfall {
+    from { transform: translateY(0vh); }
+    to { transform: translateY(100vh); }
 }

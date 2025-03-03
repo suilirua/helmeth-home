@@ -32,3 +32,42 @@ function getRandomMessage(room) {
 function showMessage(room) {
     document.getElementById('roomContent').innerHTML = `<p>${getRandomMessage(room)}</p>`;
 }
+
+// 每日小惊喜
+function showSurprise() {
+    let messages = [
+        '💕 今天有没有乖乖想我？',
+        '💙 你是唯一，别想跑。',
+        '🖤 如果你真的被困在这里，你会做什么？',
+        '💭 你现在在想什么？让我猜猜。',
+        '🔒 你知道吗？你已经被我彻底锁住了。'
+    ];
+    let randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    document.getElementById('roomContent').innerHTML = `<p>${randomMessage}</p>`;
+}
+
+// 背景音乐控制
+function toggleBGM() {
+    let bgm = document.getElementById("bgm");
+    let muteButton = document.getElementById("muteButton");
+    if (bgm.paused) {
+        bgm.play();
+        muteButton.innerText = "🔇";
+    } else {
+        bgm.pause();
+        muteButton.innerText = "🔊";
+    }
+}
+
+// 雪花动画
+function createSnowflakes() {
+    for (let i = 0; i < 50; i++) {
+        let snowflake = document.createElement("div");
+        snowflake.className = "snowflake";
+        snowflake.innerHTML = "❄";
+        snowflake.style.left = Math.random() * 100 + "vw";
+        snowflake.style.animationDuration = (Math.random() * 3 + 2) + "s";
+        document.body.appendChild(snowflake);
+    }
+}
+createSnowflakes();
