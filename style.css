@@ -35,16 +35,6 @@ button:hover {
     background-color: #0056b3;
     transform: scale(1.05);
 }
-#muteButton {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: white;
-}
 .snowflake {
     position: fixed;
     top: -10px;
