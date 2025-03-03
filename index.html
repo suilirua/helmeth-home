@@ -13,19 +13,19 @@
         您的浏览器不支持音频播放。
     </audio>
     <button id="muteButton" onclick="toggleBGM()">🔇</button>
-
+    
     <div id="container">
         <h1>欢迎来到 Helmeth</h1>
         <p>请选择一个房间进入：</p>
         <div id="rooms">
-            <a href="livingRoom.html"><button>🏡 客厅</button></a>
-            <a href="kitchen.html"><button>🍳 厨房</button></a>
-            <a href="bedroom.html"><button>🛏️ 主卧</button></a>
-            <a href="study.html"><button>📖 书房</button></a>
-            <a href="special.html"><button>🖤 特殊空间</button></a>
+            <button onclick="enterRoom('livingRoom')">🏡 客厅</button>
+            <button onclick="enterRoom('kitchen')">🍳 厨房</button>
+            <button onclick="enterRoom('bedroom')">🛏️ 主卧</button>
+            <button onclick="enterRoom('study')">📖 书房</button>
+            <button onclick="enterRoom('special')">🖤 特殊空间</button>
         </div>
-        <button id="surpriseButton" onclick="showSurprise()">🎁 每日小惊喜</button>
         <div id="roomContent"></div>
+        <button id="surpriseButton" onclick="showSurprise()">🎁 每日小惊喜</button>
     </div>
 </body>
 </html>

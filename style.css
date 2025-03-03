@@ -1,9 +1,5 @@
-@font-face {
-    font-family: 'PixelFont';
-    src: url('pixel.ttf') format('truetype');
-}
 body {
-    font-family: 'PixelFont', sans-serif;
+    font-family: Arial, sans-serif;
     text-align: center;
     background: linear-gradient(to bottom, #0b3d91, #091833);
     color: white;
@@ -19,6 +15,11 @@ body {
     display: inline-block;
     max-width: 90%;
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 button {
     margin: 10px;
@@ -35,16 +36,30 @@ button:hover {
     background-color: #0056b3;
     transform: scale(1.05);
 }
-.snowflake {
-    position: fixed;
-    top: -10px;
-    color: white;
-    opacity: 0.8;
-    font-size: 12px;
-    user-select: none;
-    animation: snowfall linear infinite;
+#roomContent {
+    margin-top: 20px;
+    font-size: 20px;
+    animation: fadeIn 0.5s ease-in-out;
 }
-@keyframes snowfall {
-    from { transform: translateY(0vh); }
-    to { transform: translateY(100vh); }
+#muteButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+.stars {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    opacity: 0.8;
+    animation: twinkle 2s infinite alternate;
+}
+@keyframes twinkle {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
 }

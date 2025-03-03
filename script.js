@@ -72,12 +72,29 @@ function tryToEscape() {
     }
 }
 
-// 确保所有代码加载完成后才执行（防止 GitHub Pages 出现执行失败的问题）
+// BGM 控制修复
+function toggleBGM() {
+    let bgm = document.getElementById("bgm");
+    let muteButton = document.getElementById("muteButton");
+
+    if (!bgm) return; // 确保 bgm 存在
+
+    if (bgm.paused) {
+        bgm.play();
+        muteButton.innerText = "🔇";
+    } else {
+        bgm.pause();
+        muteButton.innerText = "🔊";
+    }
+}
+
+// 确保返回大厅按钮正常工作
 document.addEventListener("DOMContentLoaded", function() {
-    let buttons = document.querySelectorAll("button");
-    buttons.forEach(button => {
+    let returnButtons = document.querySelectorAll("a[href='index.html']");
+    returnButtons.forEach(button => {
         button.addEventListener("click", function(event) {
             event.preventDefault();
+            window.location.href = "index.html";
         });
     });
 });
